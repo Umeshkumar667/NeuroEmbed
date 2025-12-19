@@ -20,8 +20,9 @@ Designed for:
 
 ```bash
 pip install neuroembed
-
-
+```
+## 🏗️ Architecture Overview
+```
 Text Input
    │
    ▼
@@ -37,3 +38,39 @@ Context Texts ─▶ Encoder ─▶ Context Mean
                               │
                               ▼
                    Enriched Embedding
+
+```
+## ⚡ Quick Start
+```
+from neuroembed.core import NeuroEmbed
+from neuroembed.encoders.sentence_transformer import SentenceTransformerEncoder
+
+# Initialize encoder (replaceable)
+encoder = SentenceTransformerEncoder()
+
+# Initialize NeuroEmbed
+ne = NeuroEmbed(encoder=encoder, alpha=0.6)
+
+# Input text
+query = "bank interest rate"
+
+# Optional semantic context
+context = [
+    "RBI monetary policy",
+    "repo rate",
+    "inflation control"
+]
+
+# Generate enriched embedding
+embedding = ne.embed(query, context)
+
+print("Embedding shape:", embedding.shape)
+print("Embedding norm:", (embedding @ embedding) ** 0.5)
+
+embedding = ne.embed("hello world")
+
+base = encoder.encode(["bank interest rate"])[0]
+enriched = ne.embed("bank interest rate", context)
+
+print("Cosine similarity:", base @ enriched)
+```
