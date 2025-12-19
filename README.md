@@ -13,7 +13,19 @@ Designed for:
 - Local / offline-first AI systems
 
 ---
+## ⭐ Why NeuroEmbed Exists
 
+NeuroEmbed was built to explore context-aware vector representations in a simple, testable, and model-independent way — without hype or overengineering.
+If you work on RAG, memory systems, or agent architectures, NeuroEmbed is designed to be a clean building block you can trust.
+
+## ❌ What NeuroEmbed Is NOT
+
+- Not a vector database
+- Not a retriever
+- Not a model replacement
+- Not a “state-of-the-art accuracy” claim
+
+ NeuroEmbed is a semantic modulation layer, designed to integrate cleanly into existing systems.
 
 ## 🏗️ Architecture Overview
 ```
@@ -75,4 +87,5 @@ enriched = ne.embed("bank interest rate", context)
 
 print("Cosine similarity:", base @ enriched)
 ```
+
 
