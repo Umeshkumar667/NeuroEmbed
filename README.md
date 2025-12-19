@@ -14,13 +14,7 @@ Designed for:
 
 ---
 
-## 🚀 Installation
 
-### Standard install (recommended)
-
-```bash
-pip install neuroembed
-```
 ## 🏗️ Architecture Overview
 ```
 Text Input
@@ -39,6 +33,13 @@ Context Texts ─▶ Encoder ─▶ Context Mean
                               ▼
                    Enriched Embedding
 
+```
+## 🚀 Installation
+
+### Standard install (recommended)
+
+```bash
+pip install neuroembed
 ```
 ## ⚡ Quick Start
 ```
@@ -74,3 +75,4 @@ enriched = ne.embed("bank interest rate", context)
 
 print("Cosine similarity:", base @ enriched)
 ```
+
